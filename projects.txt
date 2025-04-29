@@ -1,0 +1,4 @@
+Real-Time-ASCII
+https://github.com/Mank1941/Real-Time-ASCII
+https://youtu.be/GhKYabLHRuY
+Real-Time-ASCII captures live webcam video and instantly transforms it into real-time ASCII art. Switch between normal and ASCII views, adjust brightness and sharpness, and save frames — all through an easy-to-use interface.
