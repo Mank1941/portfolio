@@ -2,7 +2,7 @@
 body {
     margin: 0;
     padding: 15px;
-    background-color: #fff6e7;
+    background-color: #daeaf7;
     color: #000000;
 }
 .container {
@@ -30,7 +30,7 @@ header {
 .banner-text {
     position: absolute;
     /* background: hwb(19 0% 0% / 0.5); */
-    color: #fff6e7;
+    color: #daeaf7;
     padding: 11px;
     border-radius: 5px;
     font-size: 16px;
@@ -66,17 +66,17 @@ header {
 }
 
 nav#menucell {
-    background-color: #ff4f00;
+    background-color: #0754b0;
     text-align: center;
     padding: 11px;
-    color: #fff6e7;
+    color: #daeaf7;
     font-size: 16px;
     font-weight: bold;
 }
 
 nav#menucell a {
     padding: 20px;
-    color: #fff6e7;
+    color: #daeaf7;
     text-decoration: none;
 }
 
@@ -133,7 +133,7 @@ main#maincell {
     font-size: 24px;
     margin: 10px 0;
     font-weight: bold;
-    color: #ff4f00;
+    color: #0754b0;
 }
 
 .maintext {
@@ -180,7 +180,7 @@ main#maincell {
 .contact-line {
     width: 95%;
     height: 3px;
-    background-color: #ff4f00;
+    background-color: #0754b0;
     border: none;
     margin: 10px auto 20px auto;
     border-radius: 2px;
@@ -194,6 +194,6 @@ main#maincell {
 }
 
 .contact-link a:hover {
-    color: #ff4f00;
+    color: #0754b0;
     text-decoration: underline;
 }
