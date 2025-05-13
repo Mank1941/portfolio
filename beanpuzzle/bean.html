@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Magic Bean Puzzle</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Magic Bean Puzzle</h1>
+
+  <div class="layout">
+    <div class="game">
+        <canvas id="gameCanvas" width="500" height="500"></canvas><br>
+        <div class="controls">
+            <button onclick="puzzle.gen_beans(); draw()">Shuffle</button>
+        </div>
+        <div class="slots-control">
+            <div>
+            <button class="shift-btn" onclick="puzzle.shift_slot(0, 0); draw()">Slot 0 ↑</button>
+            <button class="shift-btn" onclick="puzzle.shift_slot(0, 1); draw()">Slot 0 ↓</button>
+            </div>
+            <div>
+            <button class="shift-btn" onclick="puzzle.shift_slot(1, 0); draw()">Slot 1 ↑</button>
+            <button class="shift-btn" onclick="puzzle.shift_slot(1, 1); draw()">Slot 1 ↓</button>
+            </div>
+        </div>
+  </div>
+  <div class="instructions">
+    <h2>How to Play</h2>
+    <p>
+        The goal is to separate the beans so that one slot contains all
+        <strong style="color: #b3d5e0;">0s (blue-white beans)</strong>
+        and the other all
+        <strong style="color: #5a4f64;">1s (purple beans)</strong>.
+      </p>
+    <p>
+      Click the arrows to shift beans between the slot and the messenger.
+      Each slot shifts one bean in or out depending on the direction.
+    </p>
+    <p class="inspiration">
+      <em>
+        Inspired by a video from the internet of a puzzle board where you have to separate the colored beans into their correct sides.
+      </em>
+    </p>
+  </div>
+  </div>
+  
+
+  <!-- Include your scripts -->
+  <script src="bean_puzzle.js"></script>
+  <script src="main.js"></script>
+  <script>draw();</script>
+</body>
+</html>

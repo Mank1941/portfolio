@@ -1,0 +1,13 @@
+{
+  "name": "beanpuzzle",
+  "version": "1.0.0",
+  "description": "Inspired by a video from the internet of a puzzle board where you have to separate the colored beans into their correct sides.",
+  "main": "bean_puzzle.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module"
+}
