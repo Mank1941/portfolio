@@ -1,25 +1,17 @@
 /* index.css */
+@font-face {
+    font-family: vhsFont;
+    src: url(VCR_OSD_MONO_1.001.ttf);
+}
+
 body {
     margin: 0;
     padding: 15px;
     background-color: #ffff00;
     color: #000000;
+    font-family: vhsFont;
+    font-size: 16px;
 }
-.container {
-    max-width: 1920px;
-    margin: 0 auto;
-    font-size: 13px;
-}
-
-/* PDF-like styling for Film Portfolio page */
-.pdf-title { font-family: Oswald, sans-serif; font-size: 32px; color:#424242; margin-top:20px; }
-.pdf-subtitle { font-family: 'Roboto Condensed', sans-serif; font-size:14px; color:#888; margin-bottom:2px; }
-.pdf-section { font-family:'Source Code Pro', monospace; font-size:14px; margin-top:10px; line-height:1.5; font-weight: bold; }
-.pdf-h1 { font-family: Oswald, sans-serif; font-size:22px; color:#424242; margin-top:30px; margin-bottom:10px; }
-.pdf-h2 { font-family:'Source Code Pro', monospace; font-size:16px; color:#e91d63; margin-top:20px; margin-bottom:5px; }
-.pdf-ul { margin-top:5px; margin-bottom:15px; padding-left:20px; }
-.pdf-ul li { font-family:'Source Code Pro', monospace; font-size:14px; color:#444; margin-bottom:5px; }
-.divider { width:100%; height:4px; background:#000; margin:10px 0 20px 0; }
 
 header {
     text-align: center;
@@ -27,7 +19,107 @@ header {
     background-color: #0000ff;
 }
 
-#banner-container {
+nav#menucell {
+    background-color: rgb(0, 0, 255);
+    text-align: center;
+    padding: 11px;
+    font-size: 16px;
+    font-weight: bold;
+    /* font-family: vhsFont; */
+}
+
+nav#menucell a {
+    padding: 20px;
+    color: #ffff00;
+    text-decoration: none;
+}
+
+nav#menucell a:hover {
+    color: #00aaff  ;
+}
+
+.container {
+    /* max-width: 1920px; */
+    margin: 0 auto;
+    /* font-size: 13px; */
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+    /* margin-top: 30px; */
+}
+
+.container h1 {
+    font-size: 30px;
+    color: #0000ff;
+}
+
+.container p {
+    padding: 16px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+
+main#maincell {
+    text-align: left;
+    /* padding: 15px; */
+    margin-top: 30px;
+    flex: 1;
+}
+
+.skills-grid{
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin: 0;
+}
+
+#contact-info {
+    /* width: 250px; */
+    padding: 16px;
+    margin: 16px;
+    /* border-top: 16px solid #ccc; */
+    background-color: #0000ff;
+    color: #ffff00;
+    font-weight: bold;
+}
+
+#contact-info h1{
+    font-size: 24px;
+    color: #ffff00;
+}
+
+.project h2{
+    font-size: 24px;
+    font-family: 'Courier New', Courier, monospace;
+    color: #0000ff;
+}
+
+.project img {
+    max-width: 54%;
+    border-radius: 10px;
+}
+
+.project a {
+    font-family: 'Courier New', Courier, monospace;
+    font-size:20px; 
+    font-weight: bold; 
+}
+
+
+/* PDF-like styling for Film Portfolio page */
+/* .pdf-title { font-family: Oswald, sans-serif; font-size: 32px; color:#424242; margin-top:20px; }
+.pdf-subtitle { font-family: 'Roboto Condensed', sans-serif; font-size:14px; color:#888; margin-bottom:2px; }
+.pdf-section { font-family:'Source Code Pro', monospace; font-size:14px; margin-top:10px; line-height:1.5; font-weight: bold; }
+.pdf-h1 { font-family: Oswald, sans-serif; font-size:22px; color:#424242; margin-top:30px; margin-bottom:10px; }
+.pdf-h2 { font-family:'Source Code Pro', monospace; font-size:16px; color:#e91d63; margin-top:20px; margin-bottom:5px; }
+.pdf-ul { margin-top:5px; margin-bottom:15px; padding-left:20px; }
+.pdf-ul li { font-family:'Source Code Pro', monospace; font-size:14px; color:#444; margin-bottom:5px; }
+.divider { width:100%; height:4px; background:#000; margin:10px 0 20px 0; } */
+
+
+
+/* #banner-container {
     position: relative; 
     display: inline-block;
 }
@@ -36,71 +128,13 @@ header {
     display: block; 
     width: 100%; 
     height: auto;
-}
+} */
 
-.banner-text {
-    position: absolute;
-    /* background: hwb(19 0% 0% / 0.5); */
-    color: #daeaf7;
-    padding: 11px;
-    border-radius: 5px;
-    font-size: 16px;
-    font-weight: bold;
-}
 
-.banner-text.topright {
-    bottom: 10px;
-    right: 10px;
-}
 
-.button-container {
-    height: 32px;
-    position: absolute;
-    bottom: 10px;
-    left: 10px;
-    display: flex;
-    gap: 8px;
-    /* background-color: #ff4f00; */
-    padding: 4px;
-    border-radius: 5px;
-}
 
-.button-container a img {
-    width: 32px;
-    height: 32px;
-    object-fit: cover;
-    transition: transform 0.2s;
-}
 
-.button-container a img:hover {
-    transform: scale(1.1);
-}
-
-nav#menucell {
-    background-color: rgb(0, 0, 255);
-    text-align: center;
-    padding: 11px;
-    color: #daeaf7;
-    font-size: 16px;
-    font-weight: bold;
-}
-
-nav#menucell a {
-    padding: 20px;
-    color: #daeaf7;
-    text-decoration: none;
-}
-
-nav#menucell a:hover {
-    color: #003049  ;
-}
-
-main#maincell {
-    text-align: left;
-    padding: 15px;
-}
-
-#skills,
+/* #skills,
 #about,
 .project,
 .overview {
@@ -136,9 +170,10 @@ main#maincell {
     width: 800px;
     height: 450px;
     border-radius: 10px;
-    /* object-fit: cover; */
-}
+    /* object-fit: cover;
+}*/
 
+/*
 .title,
 .title2 {
     font-size: 24px;
@@ -173,7 +208,7 @@ main#maincell {
 .skills-grid {
     text-align: center;
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     width: 1000px;
     margin: 0 auto;
@@ -184,43 +219,4 @@ main#maincell {
     font-size: 16px;
     font-weight: bold;
     color: black;
-}
-
-/* .education-list {
-    list-style-type: disc;
-    padding-left: 20px;
-    max-width: 800px;
-    margin: 0;
-    text-align: left;
-}
-
-.education-list li {
-    margin-bottom: 20px;
 } */
-
-#contact {
-    margin-top: 60px;
-    text-align: center;
-    padding-bottom: 50px;
-}
-
-.contact-line {
-    width: 95%;
-    height: 3px;
-    background-color: #0754b0;
-    border: none;
-    margin: 10px auto 20px auto;
-    border-radius: 2px;
-}
-
-.contact-link a {
-    font-size: 18px;
-    color: #003049;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.contact-link a:hover {
-    color: #0754b0;
-    text-decoration: underline;
-}
