@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume - Prosper Manyele</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #ffff00;
+            font-family: 'Courier New', monospace;
+        }
+
+        /* Header/Banner Section */
+        header {
+            text-align: center;
+            height: 250px;
+            background-color: #0000ff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 8px solid #000000;
+        }
+
+        .banner-content h1 {
+            font-size: 48px;
+            color: #ffff00;
+            letter-spacing: 4px;
+            text-shadow: 4px 4px 0px #ff0000;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: #0000ff;
+            text-align: center;
+            padding: 15px;
+            font-size: 16px;
+            font-weight: bold;
+            border-bottom: 4px solid #000000;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            padding: 15px 25px;
+            color: #ffff00;
+            text-decoration: none;
+            transition: color 0.3s, background-color 0.3s;
+            display: inline-block;
+        }
+
+        nav a:hover {
+            color: #ff0000;
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+
+        nav a.active {
+            background-color: #000000;
+            color: #ffff00;
+        }
+
+        /* Main Content */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .page-title {
+            font-size: 42px;
+            color: #0000ff;
+            text-align: center;
+            margin-bottom: 30px;
+            letter-spacing: 3px;
+        }
+
+        .download-btn-container {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .download-btn {
+            background-color: #ff0000;
+            color: #ffff00;
+            padding: 15px 40px;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            border: 4px solid #000000;
+            display: inline-block;
+            transition: all 0.3s;
+        }
+
+        .download-btn:hover {
+            background-color: #0000ff;
+            transform: translateY(-3px);
+            box-shadow: 6px 6px 0px #000000;
+        }
+
+        /* Resume Sections */
+        .resume-section {
+            background-color: #0000ff;
+            border: 6px solid #000000;
+            padding: 40px;
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            font-size: 32px;
+            color: #ffff00;
+            margin-bottom: 30px;
+            border-bottom: 4px solid #ff0000;
+            padding-bottom: 15px;
+            letter-spacing: 2px;
+        }
+
+        /* Experience Entry */
+        .experience-entry {
+            margin-bottom: 35px;
+            padding-bottom: 35px;
+            border-bottom: 2px solid rgba(255, 255, 0, 0.3);
+        }
+
+        .experience-entry:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+            margin-bottom: 0;
+        }
+
+        .entry-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .entry-title {
+            font-size: 24px;
+            color: #ffff00;
+            font-weight: bold;
+        }
+
+        .entry-date {
+            font-size: 16px;
+            color: #ff0000;
+            font-weight: bold;
+        }
+
+        .entry-subtitle {
+            font-size: 16px;
+            color: #ffff00;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        .entry-description {
+            font-size: 16px;
+            color: #ffff00;
+            line-height: 1.8;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .entry-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .entry-list li {
+            padding: 8px 0 8px 25px;
+            position: relative;
+            font-size: 15px;
+            color: #ffff00;
+            line-height: 1.6;
+        }
+
+        .entry-list li:before {
+            content: "▶";
+            position: absolute;
+            left: 0;
+            color: #ff0000;
+        }
+
+        /* Skills Grid */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .skill-category {
+            background-color: rgba(0, 0, 0, 0.2);
+            padding: 25px;
+            border-left: 6px solid #ff0000;
+        }
+
+        .skill-category h3 {
+            font-size: 20px;
+            color: #ff0000;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .skill-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .skill-list li {
+            padding: 5px 0;
+            color: #ffff00;
+            font-size: 16px;
+        }
+
+        /* Education Section */
+        .education-box {
+            background-color: rgba(0, 0, 0, 0.2);
+            padding: 30px;
+            border-left: 6px solid #ff0000;
+        }
+
+        .education-degree {
+            font-size: 22px;
+            color: #ffff00;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .education-school {
+            font-size: 18px;
+            color: #ffff00;
+            margin-bottom: 10px;
+        }
+
+        .education-date {
+            font-size: 16px;
+            color: #ff0000;
+            font-weight: bold;
+        }
+
+        /* Awards Section */
+        .award-item {
+            background-color: rgba(255, 0, 0, 0.2);
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 6px solid #ff0000;
+        }
+
+        .award-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .award-title {
+            font-size: 20px;
+            color: #ffff00;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .award-details {
+            font-size: 16px;
+            color: #ffff00;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .banner-content h1 {
+                font-size: 32px;
+            }
+
+            nav a {
+                padding: 10px 15px;
+                font-size: 14px;
+            }
+
+            .page-title {
+                font-size: 32px;
+            }
+
+            .resume-section {
+                padding: 25px 20px;
+            }
+
+            .section-title {
+                font-size: 26px;
+            }
+
+            .entry-title {
+                font-size: 20px;
+            }
+
+            .skills-container {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .entry-header {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header/Banner -->
+    <header>
+        <div class="banner-content">
+            <h1>RESUME</h1>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="index.html">HOME</a>
+        <a href="projects.html">PROJECTS</a>
+        <a href="resume.html" class="active">RESUME</a>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <h1 class="page-title">PROSPER MANYELE</h1>
+        
+        <div class="download-btn-container">
+            <a href="resume.pdf" class="download-btn" download>▶ DOWNLOAD PDF RESUME</a>
+        </div>
+
+        <!-- Film Experience -->
+        <section class="resume-section">
+            <h2 class="section-title">FILM EXPERIENCE</h2>
+
+            <div class="experience-entry">
+                <div class="entry-header">
+                    <div class="entry-title">The Art of Noticing</div>
+                    <div class="entry-date">OCT 2025</div>
+                </div>
+                <div class="entry-subtitle">Short Film | Funded by PictureNL</div>
+                <div class="entry-description">
+                    Co-Writer, Producer & Co-Director
+                </div>
+                <ul class="entry-list">
+                    <li>Co-wrote the script with writing partner</li>
+                    <li>Produced the short film: secured PictureNL funding, location, equipment, and casting</li>
+                    <li>Co-Directed the film</li>
+                    <li>Edited the film</li>
+                    <li>Audio Supervisor & Sound Foley</li>
+                </ul>
+            </div>
+
+            <div class="experience-entry">
+                <div class="entry-header">
+                    <div class="entry-title">TO HAVE AND TO HOLD</div>
+                    <div class="entry-date">NOV 2025</div>
+                </div>
+                <div class="entry-subtitle">Documentary | Centra Cultural Collective Inc. Production</div>
+                <div class="entry-description">
+                    1st Assistant Director
+                </div>
+                <ul class="entry-list">
+                    <li>Assisted Director in production during shooting days</li>
+                    <li>Supervised and handled audio recording during interviews</li>
+                </ul>
+            </div>
+
+            <div class="experience-entry">
+                <div class="entry-header">
+                    <div class="entry-title">Everything Is Nothing</div>
+                    <div class="entry-date">MAY 2025</div>
+                </div>
+                <div class="entry-subtitle">Short Film | East Oracle Films Production</div>
+                <div class="entry-description">
+                    Producer, Cinematographer & Editor
+                </div>
+                <ul class="entry-list">
+                    <li>Won Best Director Award at Occupy All Spaces / Open Film Fest 72-Hour Film Challenge</li>
+                    <li>Produced the short film including locations, equipment, and casting</li>
+                    <li>Videographer and cinematographer</li>
+                    <li>Edited the short film</li>
+                </ul>
+            </div>
+
+            <div class="experience-entry">
+                <div class="entry-header">
+                    <div class="entry-title">The Fitting Of Black Hair In Spaces</div>
+                    <div class="entry-date">DEC 2024 - APR 2025</div>
+                </div>
+                <div class="entry-subtitle">Documentary | BoredFilms Production</div>
+                <div class="entry-description">
+                    Creator, Producer & Director
+                </div>
+                <ul class="entry-list">
+                    <li>Created and produced the project from pre-production to post-production</li>
+                    <li>Researched topics and conducted interviews</li>
+                    <li>Directed all interviews</li>
+                    <li>Edited the final product and accompanying clips</li>
+                    <li>Animated the opening sequence</li>
+                </ul>
+            </div>
+
+            <div class="experience-entry">
+                <div class="entry-header">
+                    <div class="entry-title">Sincerely Yours</div>
+                    <div class="entry-date">MAR 2024</div>
+                </div>
+                <div class="entry-subtitle">Short Film | East Oracle Films Production</div>
+                <div class="entry-description">
+                    Producer, Cinematographer & Editor
+                </div>
+                <ul class="entry-list">
+                    <li>Produced the short film including locations, equipment, and casting</li>
+                    <li>Videographer and cinematographer</li>
+                    <li>Edited the short film</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Additional Experience -->
+        <section class="resume-section">
+            <h2 class="section-title">ADDITIONAL EXPERIENCE</h2>
+
+            <div class="experience-entry">
+                <div class="entry-header">
+                    <div class="entry-title">Occupy All Spaces Documentary Camp</div>
+                    <div class="entry-date">NOV 2025</div>
+                </div>
+                <div class="entry-subtitle">Produced by Occupy All Spaces</div>
+                <div class="entry-description">
+                    Creative Crew Mentee for Directing, Cinematography and Sound
+                </div>
+            </div>
+
+            <div class="experience-entry">
+                <div class="entry-header">
+                    <div class="entry-title">The Perfect Party</div>
+                    <div class="entry-date">IN PRE-PRODUCTION</div>
+                </div>
+                <div class="entry-subtitle">Short Film</div>
+                <div class="entry-description">
+                    Writer, Producer & Director
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills -->
+        <section class="resume-section">
+            <h2 class="section-title">TECHNICAL SKILLS</h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>Creative Skills</h3>
+                    <ul class="skill-list">
+                        <li>Screenwriting</li>
+                        <li>Film Directing</li>
+                        <li>Cinematography</li>
+                        <li>Media Production</li>
+                        <li>Video Editing</li>
+                        <li>Graphic Design</li>
+                        <li>Film Producing</li>
+                        <li>Audio Production</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Tools & Software</h3>
+                    <ul class="skill-list">
+                        <li>Adobe Premiere Pro</li>
+                        <li>Adobe After Effects</li>
+                        <li>Adobe Photoshop</li>
+                        <li>Adobe Illustrator</li>
+                        <li>DaVinci Resolve</li>
+                        <li>Blender</li>
+                        <li>Celtx</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Awards & Recognition -->
+        <section class="resume-section">
+            <h2 class="section-title">AWARDS & RECOGNITION</h2>
+            
+            <div class="award-item">
+                <div class="award-title">Best Director Award</div>
+                <div class="award-details">
+                    Film Team won Best Director Award in the Occupy All Spaces / Open Film Fest 72-Hour Film Challenge | May 2025
+                </div>
+            </div>
+        </section>
+
+        <!-- Education -->
+        <section class="resume-section">
+            <h2 class="section-title">EDUCATION</h2>
+            
+            <div class="education-box">
+                <div class="education-degree">Bachelor's Degree in Computer Science</div>
+                <div class="education-school">Memorial University of Newfoundland & Labrador</div>
+                <div class="education-date">JANUARY 2020 - OCTOBER 2025</div>
+            </div>
+        </section>
+
+    </main>
+
+</body>
+</html>
